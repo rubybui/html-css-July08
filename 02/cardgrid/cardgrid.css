@@ -1,0 +1,123 @@
+@gray-dark: #a2a2a2;
+@gray-background: #e8e8e8;
+@gray-text: #b6b6b6;
+@gray-border: #cccccc;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #f9f9f9;
+}
+
+body {
+  color: @gray-background;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  background-color: white;
+  border: 1px solid @gray-border;
+  color: @gray-dark;
+  padding: 0.5rem;
+  text-transform: lowercase;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+  @media (min-width: 40rem) {
+    width: 50%;
+  }
+  @media (min-width: 56rem) {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.card_image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; // 16:9 aspect ratio
+  }
+  @media (min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%; // 3:2 aspect ratio
+    }
+  }
+}
+
+.card_image--flex {
+  background-image: url(https://i.ibb.co/DWt1z9j/59-800x600.jpg);
+}
+
+.card_image--grow {
+  background-image: url(https://i.ibb.co/MNxJHrj/11-800x600.jpg);
+}
+
+.card_image--shrink {
+  background-image: url(https://i.ibb.co/PmtNCBt/39-800x600.jpg);
+}
+
+.card_title {
+  color: @gray-text;
+  font-size: 1.7rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card_text {
+  color: @gray-text;
+  flex: 1 1 auto;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+}
