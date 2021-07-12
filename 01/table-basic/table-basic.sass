@@ -1,0 +1,25 @@
+$gray-row: #f9fafd
+$gray-background: #eeeeee
+$gray-shadow: #eaeaea
+
+$font-stack: arial, sans-serif
+@mixin centerer 
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+html
+  background-color: $gray-background
+table
+  font-family: 100% $font-stack
+  border-collapse: collapse
+  box-shadow: 4px 2px $gray-shadow
+  @include centerer
+  td, th
+    padding: 8px
+  tr:nth-child(even)
+    background-color: $gray-row
+  tr:nth-child(odd)
+    background-color: white
+    
